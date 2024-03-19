@@ -429,8 +429,9 @@ def recv(filename, sender_addr, recvr_addr):
             if curr_chunk_no == sendreq_chunk_count-1:
                 # Create file_data object out of chunks in chunk_list
                 file_data = b''
-                for i in range(len(chunk_list)):
-                    file_data += chunk_list[i]
+                file_data = file_data.join(chunk_list)
+                # for i in range(len(chunk_list)):
+                #     file_data += chunk_list[i]
 
                 # Check if received file data's checksum matches checksum
                 # that was received in SendReq. If it does, file data 
