@@ -444,12 +444,14 @@ def recv(filename, sender_addr, recvr_addr):
                     sock.sendto(msg,sender_addr)
                     draw_progress_bar(curr_chunk_no+1,sendreq_chunk_count)
                     # print(f'Chunks received:{curr_chunk_no+1}')
-                    print(f'\nFile received. File Data Size: {len(file_data)}.')
+                    print(f'\nFile data received. File Data Size: {len(file_data)}.')
                     # print(list(msg))
 
                     # Create (if needed) and write data to it.
+                    print('Writing data to file...')
                     with open(filename, 'wb+') as f:
                         f.write(file_data)
+                    print('Done.')
                     # break loop so we can exit program.
                     break
             # Else if curr_chunk_no is not last chunk.
