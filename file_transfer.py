@@ -16,7 +16,7 @@ ProgState = Enum('ProgState',[
 ])
 
 magic_number = 0x1a # Every msg must start with this byte
-sock_timeout = 10   # Seconds before socket times out.
+sock_timeout = 20   # Seconds before socket times out.
 
 # Takes in a byte array, divides it up into chunks of chunk_size and
 # returns chunk_list containing those chunks.
