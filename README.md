@@ -15,7 +15,7 @@ Send or receive files over UDP. Start the receiver first, then the sender.
 ```python file_transfer.py recv somefile01.txt 192.168.8.111:9510 192.168.8.103:9510```
 
 ## NOTE:
-Socket timeout in both modes is set to 10 seconds by default. If you're sending a big file and the program might take longer than 10 seconds to read and process the data, consider increasing the value of sock_timeout in the script, to avoid reaching socket timeout.
+Socket timeout in both modes is set to 20 seconds by default. If you're sending a big file and the program might take longer than 10 seconds to read and process the data, consider increasing the value of sock_timeout in the script, to avoid reaching socket timeout.
 
 ------------------------------------------------------
 ## Program flow:
