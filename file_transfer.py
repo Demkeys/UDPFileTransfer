@@ -293,8 +293,8 @@ def send(filename, sender_addr, recvr_addr):
             
             # If FilePktAck is received...
             if decoded_data['msg_type'] == MsgType.FilePktAck:
-                # If chunk is not the last chunk received chunk checksum
-                # is same as stored chunk checksum...
+                # If curr_chunk_no is not the last chunk and received
+                # chunk checksum is same as stored chunk checksum...
                 if curr_chunk_no < len(chunk_list) and \
                     decoded_data['chunk_data_checksum'] == curr_chunk_checksum:
                     draw_progress_bar(curr_chunk_no+1,chunk_count)
